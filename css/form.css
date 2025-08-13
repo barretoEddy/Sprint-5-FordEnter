@@ -47,6 +47,7 @@ button {
     height: 40px;
     margin-right: 8px;
     float: right;
+    transition: all 0.3s ease;
 }
 
 .titulo {

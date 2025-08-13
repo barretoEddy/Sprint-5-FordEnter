@@ -27,8 +27,8 @@ function next() {
     const imgElement = document.createElement("img");
     imgElement.src = slides[currentIndex].image;
     imgElement.alt = slides[currentIndex].title;
-    imgElement.style.width = "70%"; // Adjust as needed
-    imgElement.style.height = "auto"; // Adjust as needed
+    imgElement.style.width = "70%"; 
+    imgElement.style.height = "auto";
 
     carouselDiv.appendChild(imgElement);
 
