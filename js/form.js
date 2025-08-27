@@ -2,24 +2,34 @@
 //class contato
 
 class contato {
-    constructor(nome, sobrenome, email, cpf, telefone, tipoContato) {
+    constructor(nome, email, telefone, tipoContato, mensagem) {
         this.nome = nome;
-        this.sobrenome = sobrenome;
         this.email = email;
-        this.cpf = cpf;
         this.telefone = telefone;
         this.tipoContato = tipoContato;
+        this.mensagem = mensagem;
     }
 }
 
-function Post(form) {
-    let data = new contato(form.elements.namedItem("nome").value,
-            form.elements.namedItem("email").value, 
-            form.elements.namedItem("telefone").value, 
-            form.elements.namedItem("contato").value);
-  
-    alert(`Obrigado sr(a) ${data.nome} ${data.sobrenome}, os seus dados foram encaminhados com sucesso!`);
-    return false; // Prevent actual form submission
+function Post(form, event) {
+    // Prevenir o comportamento padrão do formulário (recarregar a página)
+    event.preventDefault();
+    
+    let data = new contato(
+        form.elements.namedItem("nome").value,
+        form.elements.namedItem("email").value, 
+        form.elements.namedItem("telefone").value, 
+        form.elements.namedItem("contato").value,
+        form.elements.namedItem("mensagem").value
+    );
+    
+    console.log('Dados do formulário:', data);
+    
+    alert(`Obrigado sr(a) ${data.nome}, os seus dados foram encaminhados com sucesso!`);
+
+    form.reset();
+
+    return false; 
 }
 
 document.addEventListener("DOMContentLoaded", function() {

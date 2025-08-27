@@ -37,7 +37,7 @@
             </div>
             <div>
                 <h2 class="titulo">Sobre Você</h2>
-            <form onsubmit="Post(this);">
+            <form onsubmit="return Post(this, event);">
                 <input type="text" name="nome" placeholder="NOME*" class="fordform" required>
                 <input type="text" name="email" placeholder="E-MAIL*" class="fordform" required>
                 <input type="text" name="telefone" placeholder="TELEFONE*" class="fordform" required>
@@ -47,6 +47,7 @@
                     <option>RECLAMAÇÃO</option>
                     <option>SOLICITAÇÃO</option>
                 </select>
+                <textarea name="mensagem" placeholder="Digite sua mensagem aqui!" class="fordform"></textarea>
             <button type="submit" id="submit-btn">Enviar</button>
             </form>
             </div>
