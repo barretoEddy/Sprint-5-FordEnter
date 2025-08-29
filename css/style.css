@@ -147,3 +147,8 @@ button {
     border: 0px;
     border-radius: 10px;
 }
+#enviarBtn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
